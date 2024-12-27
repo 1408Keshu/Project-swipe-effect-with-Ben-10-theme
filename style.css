@@ -1,0 +1,138 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-bold');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:   linear-gradient(
+        rgba(0, 0, 0, 0.9), 
+        rgba(0, 0, 0, 0.4)), url(images/TEN_29.webp);
+    /* backdrop-filter: 15px; */
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* filter: brightness(50%); */
+    /* z-index: 1; */
+    
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;    
+    overflow: hidden;
+    position: relative;
+
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left:calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s  linear infinite;
+    z-index: 3;
+}
+
+@keyframes autoRun {
+    from{
+        transform: perspective(1000px) rotateX(-14deg)  rotateY(0deg);
+    }
+    to{
+        transform: perspective(1000px) rotateX(-14deg)  rotateY(360deg);
+        
+    }
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(400px);
+} 
+.banner .slider .item img{
+    width: 100%;
+    /* width: 200px; */
+   height:  100%;
+   /* height:  250px; */
+   /* object-fit:cover;  */
+   
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1480px,100vw);
+    height: max-content;
+    padding-bottom:100px ;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #252838;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    /* left: 0; */
+    content:attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+     /* border for text */
+}
+.banner .content .auther{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+    margin: 0;
+    position: absolute;
+    right: 36px;
+    bottom: 0px;
+}
+/* .banner .content .h2{
+    font-size: 3em;
+    color: white;
+    
+} */
+h2{
+    font-size: 2em;
+    color: rgb(207, 207, 207);
+    /* -webkit-text-stroke: #252838; */
+    /* border: 2px solid grey; */
+    text-shadow: 3px 2px 4px #252838;
+}
+p{
+    color: white;
+    text-shadow: #252838;
+    text-shadow: 2px 2px 4px #252838;
+}
+.banner .content .model{
+    background-image: url(images/cf3c5mya0xc71.png);
+    
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    left: 200px;
+    bottom: 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top start;
+    z-index: 1;
+}
